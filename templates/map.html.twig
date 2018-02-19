@@ -4,3 +4,9 @@
     <h1>{{ title }}</h1>
 {% endblock %}
 
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script src="{{ asset('js/map.js') }}"></script>
+{% endblock %}
+
