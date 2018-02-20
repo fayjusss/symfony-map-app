@@ -7,12 +7,19 @@
 {% endblock %}
 
 {% block body %}
-    <h1>{{ title }}</h1>
+    <div id="floating-panel">
+        <input id="address" type="textbox" value="Sydney, NSW">
+        <input id="submit" type="button" value="Geocode">
+    </div>
+    <div id="map"></div>
 {% endblock %}
 
 {% block javascripts %}
     {{ parent() }}
 
     <script src="{{ asset('js/map.js') }}"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDopRt3mlPGSUXVLCPaPVCxslHytcpw9AY&callback=initMap">
+    </script>
 {% endblock %}
 
