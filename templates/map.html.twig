@@ -19,10 +19,16 @@
         <div class="row">
 
             <div class="col-md-8">
-                <div id="floating-panel">
-                    <input id="address" type="textbox" value="Sydney, NSW">
-                    <input id="submit" type="button" value="Geocode">
-                </div>
+                <form id="floating-panel">
+                    <div class="row">
+                        <div class="col">
+                            <input id="address" class="form-control" type="textbox" value="Sydney, NSW">
+                        </div>
+                        <div class="col">
+                            <input id="submit" class="btn btn-success" type="button" value="Geocode">
+                        </div>
+                    </div>
+                </form>
                 <div id="map"></div>
             </div>
 
