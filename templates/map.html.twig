@@ -8,24 +8,17 @@
 
 {% block body %}
     <!-- Page Content -->
-    <div class="container">
-
-        <!-- Portfolio Item Heading -->
-        <h1 class="my-4">Page Heading
-            <small>Secondary Text</small>
-        </h1>
-
-        <!-- Portfolio Item Row -->
+    <div class="m-5">
         <div class="row">
 
-            <div class="col-md-8">
+            <div class="col-md-6">
                 <div id="map"></div>
             </div>
 
-            <div class="col-md-4">
-                <h3 class="my-3">Project Description</h3>
+            <div class="col-md-6">
+                <h3 class="my-3">Map Description</h3>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam viverra euismod odio, gravida pellentesque urna varius vitae. Sed dui lorem, adipiscing in adipiscing et, interdum nec metus. Mauris ultricies, justo eu convallis placerat, felis enim.</p>
-                <h3 class="my-3">Project Details</h3>
+                <h3 class="my-3">Options</h3>
                 <ul>
                     {#Address input#}
                     <li>
@@ -35,7 +28,7 @@
                                     <input id="address" class="form-control" type="textbox" value="Sydney, NSW">
                                 </div>
                                 <div class="col-md-6">
-                                    <input id="submit-location" class="btn btn-success" type="button" value="Geocode">
+                                    <input id="submit-location" class="btn btn-block btn-outline-success" type="button" value="Mark from Address!">
                                 </div>
                             </div>
                         </form>
@@ -50,7 +43,7 @@
                                     <input type="color" id="marker-color" class="form-control" value="#ff0000">
                                 </div>
                                 <div class="col-md-6">
-                                    <input id="submit-color" class="btn btn-success" type="button" value="Change Marker Color!">
+                                    <input id="submit-color" class="btn btn-block btn-outline-success" type="button" value="Change Marker Color!">
                                 </div>
                             </div>
                         </form>
@@ -62,15 +55,27 @@
                         <form>
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input id="address" class="form-control" type="textbox" value="Sydney, NSW">
+                                    <input id="marker-icon" class="form-control" type="url" list="defaultURLs" required>
+                                    <datalist id="defaultURLs">
+                                        <option value="https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png" label="Beach Flag">
+                                    </datalist>
                                 </div>
                                 <div class="col-md-6">
-                                    <input id="submit" class="btn btn-success" type="button" value="Geocode">
+                                    <input id="submit-icon" class="btn btn-block btn-outline-success" type="button" value="Add URL and Change Marker">
                                 </div>
                             </div>
                         </form>
                     </li>
                     {#/Marker icon change#}
+                    <li>
+                        <input id="clear-markers" class="btn btn-block btn-outline-primary" type=button value="Hide Markers">
+                    </li>
+                    <li>
+                        <input id="show-markers" class="btn btn-block btn-outline-primary" type=button value="Show All Markers">
+                    </li>
+                    <li>
+                        <input id="delete-markers" class="btn btn-block btn-outline-danger" type=button value="Delete Markers">
+                    </li>
                 </ul>
             </div>
 
