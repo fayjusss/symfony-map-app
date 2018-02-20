@@ -4,13 +4,19 @@ function initMap() {
         center: {lat: -34.397, lng: 150.644}
     });
     var geocoder = new google.maps.Geocoder();
+    var markerIcon = 'http://www.googlemapsmarkers.com/v1/009900/';
 
-    document.getElementById('submit').addEventListener('click', function() {
-        geocodeAddress(geocoder, map);
+    document.getElementById('submit-color').addEventListener('click', function() {
+        markerIcon = 'http://www.googlemapsmarkers.com/v1/' + document.getElementById('marker-color').value.slice(1) + '/';
+        geocodeAddress(geocoder, map, markerIcon);
+    });
+
+    document.getElementById('submit-location').addEventListener('click', function() {
+        geocodeAddress(geocoder, map, markerIcon);
     });
 }
 
-function geocodeAddress(geocoder, resultsMap) {
+function geocodeAddress(geocoder, resultsMap, markerIcon) {
     var address = document.getElementById('address').value;
     geocoder.geocode({'address': address}, function(results, status) {
         if (status === 'OK') {
@@ -19,7 +25,7 @@ function geocodeAddress(geocoder, resultsMap) {
                 map: resultsMap,
                 position: results[0].geometry.location
             });
-            marker.setIcon('http://www.googlemapsmarkers.com/v1/009900/')
+            marker.setIcon(markerIcon);
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
