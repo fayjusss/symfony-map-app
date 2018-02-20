@@ -19,6 +19,7 @@ function geocodeAddress(geocoder, resultsMap) {
                 map: resultsMap,
                 position: results[0].geometry.location
             });
+            marker.setIcon('http://www.googlemapsmarkers.com/v1/009900/')
         } else {
             alert('Geocode was not successful for the following reason: ' + status);
         }
